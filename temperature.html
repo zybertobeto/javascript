@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="temperature.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Homepage</h1>
+      </header>
+
+      <article class="main">
+        <form action="action_page.php" id="tempform" method="post">
+          <div class="temperatureform">
+            <div class="formdata">
+              <label for="displayarea"></label>
+              <input
+                type="text"
+                id="displayarea"
+                name="displayarea"
+                placeholder="0"
+              />
+            </div>
+
+            <!-- Temperature form radio buttons -->
+            <div class="radiofield">
+              <p>
+                <input type="radio" id="celtofahdisplayarea" name="tempunits" />
+                <label for="celtofah">Celsius to Fahrenheit</label>
+              </p>
+
+              <p>
+                <input type="radio" id="fahtocel" name="tempunits" />
+                <label for="celtofah">Fahrenheit to Celsius</label>
+              </p>
+
+              <p>
+                <input type="radio" id="celtokel" name="tempunits" />
+                <label for="celtofah">Celsius to Kelvin</label>
+              </p>
+
+              <p>
+                <input type="radio" id="fahtokel" name="tempunits" />
+                <label for="celtofah">Fahrenheit to Kelvin</label>
+              </p>
+
+              <p>
+                <input type="radio" id="keltocel" name="tempunits" />
+                <label for="celtofah">Kelvin to Celsius</label>
+              </p>
+
+              <p>
+                <input type="radio" id="keltofah" name="tempunits" />
+                <label for="celtofah">Kelvin to Fahrenheit</label>
+              </p>
+            </div>
+
+            <div>
+              <input
+                type="submit"
+                id="calc"
+                name="calc"
+                value="Calculate"
+                onclick="tempConversion"
+              />
+            </div>
+
+            <div>
+              <input type="reset" id="resetbutton" />
+            </div>
+          </div>
+        </form>
+
+        <div>
+          <input
+            type="button"
+            class="TempButtons"
+            value="Celsius to Fahrenheit"
+            id="btnCelFah"
+            name="btnCelFh"
+            onclick="CelsiusFah"
+          />
+          <input
+            type="button"
+            class="TempButtons"
+            value="Fahrenheit to Celsius"
+            id="btnFahCel"
+            name="btnFahCel"
+            onclick="FahrenheitCel"
+          />
+
+          <input
+            type="button"
+            class="TempButtons"
+            value="Kelvin to Fahrenheit"
+            id="btnKelFah"
+            name="btnKelFah"
+            onclick="KelvinFah"
+          />
+
+          <input
+            type="button"
+            class="TempButtons"
+            value="Celsius to Kelvin"
+            id="btnCelKel"
+            name="btnCelKel"
+            onclick="CelsiusKel"
+          />
+
+          <input
+            type="button"
+            class="TempButtons"
+            value="Fahrenheit to Kelvin"
+            id="btnFahKel"
+            name="btnFahKel"
+            onclick="FahrenheitKel"
+          />
+
+          <input
+            type="button"
+            class="TempButtons"
+            value="Kelvin to Celsius"
+            id="btnKelCel"
+            name="btnKelCel"
+            onclick="KelvinCel"
+          />
+        </div>
+      </article>
+
+      <aside class="aside aside1">
+        <h1>Navigation</h1>
+
+        <nav class="navbar">
+          <ul>
+            <li><a href="../Flexbox_Blueprint/template.html">Home</a></li>
+            <li><a href="../Flexbox_Blueprint/products.html">Products</a></li>
+            <li><a href="../Flexbox_Blueprint/marketing.html">Marketing</a></li>
+            <li><a href="../Flexbox_Blueprint/community.html">Community</a></li>
+            <li><a href="../Flexbox_Blueprint/gallery.html">Gallery</a></li>
+            <li><a href="../Flexbox_Blueprint/about.html">About</a></li>
+            <li><a href="../Flexbox_Blueprint/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <aside class="aside aside2">
+        <h1>Advertisements</h1>
+      </aside>
+      <footer class="footer">
+        <h1>Footer</h1>
+      </footer>
+    </div>
+    <script src="temperature.js"></script>
+  </body>
+</html>

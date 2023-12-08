@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  margin: 10px;
+  flex: 1 100%;
+  border-radius: 10px;
+}
+
+.header {
+  background: tomato;
+  height: 120px;
+}
+
+.footer {
+  background: lightgreen;
+  height: 80px;
+}
+
+.main {
+  text-align: left;
+  background: deepskyblue;
+  border: 20px;
+  font-size: 24px;
+  padding: 20px;
+}
+
+.aside1 {
+  background: gold;
+}
+
+.aside2 {
+  background: hotpink;
+}
+
+.temperatureform {
+  width: 410px;
+  height: 400;
+  border: 5px;
+  border-style: solid;
+  padding: 60px;
+  margin-left: 30px;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+#displayarea {
+  margin-bottom: 35px;
+  text-align: right;
+  width: 220px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 30px;
+  border-right: 10px;
+  letter-spacing: 3px;
+}
+
+.radiofield p {
+  margin-bottom: 15px;
+}
+
+#calc {
+  width: 200px;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#resetbutton {
+  width: 150px;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.TempButtons {
+  width: 230px;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 20px;
+  margin: 15px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: green;
+  width: 60%;
+  border-radius: 80px;
+}
+
+.navbar li a {
+  transition: all 0.3s ease 0.15s;
+}
+
+.navbar a:hover {
+  background-color: mediumaquamarine;
+  color: whitesmoke;
+}
+
+@media all and (min-width: 800px) {
+  .main {
+    flex: 3;
+  }
+
+  .aside1 {
+    order: 1;
+  }
+
+  .aside2 {
+    order: 2;
+  }
+
+  .main {
+    order: 2;
+  }
+
+  .footer {
+    order: 4;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1;
+  }
+}
