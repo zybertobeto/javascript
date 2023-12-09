@@ -19,9 +19,12 @@
               <label for="displayarea"></label>
               <input
                 type="text"
+                class="displaybox"
                 id="displayarea"
                 name="displayarea"
                 placeholder="0"
+                min="1"
+                max="1000"
               />
             </div>
 
@@ -59,13 +62,7 @@
             </div>
 
             <div>
-              <input
-                type="submit"
-                id="calc"
-                name="calc"
-                value="Calculate"
-                onclick="tempConversion"
-              />
+              <input type="submit" id="calc" name="calc" value="Calculate" onclick="CalcTemp" />
             </div>
 
             <div>
@@ -74,15 +71,29 @@
           </div>
         </form>
 
+        <form class="temperatureform temperatureform2">
+          <label for="tempdisplaybox">Enter number between 1 and 1000</label>
+        <input
+          type="number"
+          name="tempdisplaybox"
+          id="tempdisplaybox"
+          placeholder="0"
+          min="1"
+          max="1000"
+          class="displaybox displaybox2"
+        />
+
         <div>
+          
           <input
             type="button"
             class="TempButtons"
             value="Celsius to Fahrenheit"
             id="btnCelFah"
-            name="btnCelFh"
+            name="btnCelFah"
             onclick="CelsiusFah"
           />
+
           <input
             type="button"
             class="TempButtons"
@@ -90,7 +101,8 @@
             id="btnFahCel"
             name="btnFahCel"
             onclick="FahrenheitCel"
-          />
+          /> <br>
+
 
           <input
             type="button"
@@ -100,6 +112,7 @@
             name="btnKelFah"
             onclick="KelvinFah"
           />
+          
 
           <input
             type="button"
@@ -108,7 +121,7 @@
             id="btnCelKel"
             name="btnCelKel"
             onclick="CelsiusKel"
-          />
+          /> <br>
 
           <input
             type="button"
@@ -126,7 +139,11 @@
             id="btnKelCel"
             name="btnKelCel"
             onclick="KelvinCel"
-          />
+          /> <br>
+
+          <input type="reset" id="resetbutton2">
+        </form>
+
         </div>
       </article>
 

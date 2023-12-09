@@ -55,7 +55,13 @@
   box-sizing: border-box;
 }
 
-#displayarea {
+.temperatureform2 {
+  width: 800px;
+  height: 400;
+  margin-top: 100px;
+}
+
+.displaybox {
   margin-bottom: 35px;
   text-align: right;
   width: 220px;
@@ -66,6 +72,11 @@
   letter-spacing: 3px;
 }
 
+.displaybox2 {
+  margin-top: 35px;
+  margin-left: 50px;
+  width: 400px;
+}
 .radiofield p {
   margin-bottom: 15px;
 }
@@ -83,6 +94,16 @@
   height: 35px;
   border-radius: 8px;
   font-size: 20px;
+}
+
+#resetbutton2 {
+  width: 230px;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 25px;
+  margin-left: 140px;
+  margin-top: 30px;
+  background-color: rgb(172, 233, 81);
 }
 
 .TempButtons {
