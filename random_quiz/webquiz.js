@@ -36,7 +36,7 @@ const questions = [
     ],
   },
   {
-    question: "Who is the author of 'Wuthering Heignts'?",
+    question: "Who is the author of 'Wuthering Heights'?",
     answers: [
       { text: "Emily Bronte", correct: true },
       { text: "William Shakespeare", correct: false },
@@ -53,6 +53,42 @@ const questions = [
       { text: "Harp", correct: false },
     ],
   },
+  {
+    question: "What is the highest point on Mount Everest?",
+    answers: [
+      { text: "8848m", correct: true },
+      { text: "14000m", correct: false },
+      { text: "6299m", correct: false },
+      { text: "20853m", correct: false },
+    ],
+  },
+  {
+    question: "How many sides has a parallelogram?",
+    answers: [
+      { text: "6", correct: false },
+      { text: "4", correct: true },
+      { text: "7", correct: false },
+      { text: "8", correct: false },
+    ],
+  },
+  {
+    question: "What is the most consumed beverage on the planet?",
+    answers: [
+      { text: "Vodka", correct: false },
+      { text: "Coca-Cola", correct: false },
+      { text: "Coffee", correct: false },
+      { text: "Water", correct: true },
+    ],
+  },
+  {
+    question: "How many sides has a circle?",
+    answers: [
+      { text: "1", correct: false },
+      { text: "Infinity", correct: false },
+      { text: "0", correct: true },
+      { text: "3", correct: false },
+    ],
+  },
 ];
 
 const quizApp = document.getElementById("app-box");
@@ -60,14 +96,30 @@ const quizOptions = document.getElementById("quiz-options");
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
-
 const startButton = document.getElementById("start-btn");
 
 quizApp.style.display = "none";
 
 let currentQuestionIndex = 0;
 let score = 0;
+let usedQuestions = [];
 
+function getRandomQuestion() {
+  let randomIndex = Math.floor(Math.random() * questions.length);
+  {
+    console.log(usedQuestions);
+    while (
+      usedQuestions.includes(randomIndex) &&
+      usedQuestions.length < questions.length
+    ) {
+      randomIndex = Math.floor(Math.random() * questions.length);
+    }
+    usedQuestions.push(randomIndex);
+  }
+  return questions[randomIndex];
+}
+
+/*
 function getRandomQuestion() {
   const randomIndex = Math.floor(Math.random() * questions.length);
   {
@@ -77,6 +129,21 @@ function getRandomQuestion() {
     return questions[randomIndex];
   }
 }
+}*/
+
+/*
+function getRandomQuestion() {
+  if (usedQuestions.includes(randomIndex)) {
+    getRandomQuestion();
+  } else {
+    usedQuestions.add(randomIndex);
+  }
+  if (questions.includes(randomIndex)) {
+    getRandomQuestion();
+  }
+  return questions[randomIndex];
+}
+*/
 
 function startQuiz() {
   quizApp.style.display = "block";
@@ -156,51 +223,8 @@ nextButton.addEventListener("click", () => {
   if (currentQuestionIndex < questions.length) {
     handleNextButton();
   } else {
-    //startQuiz();
+    startQuiz();
   }
 });
 
 startQuiz;
-
-/*
-function retrieveData() {
-  quizApp.style.display = "block";
-  quizOptions.style.display = "none";
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", "./the_gettysburg_address.txt", true);
-  xhr.onload = function () {
-    //const quizQuestions = JSON.parse(this.responseText);
-    //console.log(document.getElementById("app-box")).innerHTML =
-    // this.responseText;
-    console.log(this.responseText);
-  };
-  xhr.send();
-}
-
-
-function retrieveData() {
-  quizApp.style.display = "block";
-  quizOptions.style.display = "none";
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", "./questions.php", true);
-  xhr.onload = function () {
-    let quizQuestions = JSON.parse[this.responseText];
-    //console.log(document.getElementById("app-box")).innerHTML =
-    // this.responseText;
-    console.log(quizQuestions);
-  };
-  xhr.send();
-}
-
-
-
-let url = "./questions.php";
-
-fetch(url)
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  });
-  */
