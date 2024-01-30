@@ -106,16 +106,16 @@ let usedQuestions = [];
 
 function getRandomQuestion() {
   let randomIndex = Math.floor(Math.random() * questions.length);
-  {
-    console.log(usedQuestions);
-    while (
-      usedQuestions.includes(randomIndex) &&
-      usedQuestions.length < questions.length
-    ) {
-      randomIndex = Math.floor(Math.random() * questions.length);
-    }
-    usedQuestions.push(randomIndex);
+  console.log(usedQuestions);
+  while (
+    usedQuestions.includes(randomIndex) &&
+    usedQuestions.length < questions.length
+  ) {
+    randomIndex = Math.floor(Math.random() * questions.length);
   }
+  console.log(randomIndex);
+
+  usedQuestions.push(randomIndex);
   return questions[randomIndex];
 }
 
@@ -151,7 +151,6 @@ function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
   nextButton.innerHTML = "Next";
-  getRandomQuestion();
 }
 
 showQuestion();
@@ -199,9 +198,12 @@ function showScore() {
   questionElement.innerHTML = `You scored ${Math.round(
     (score / questions.length) * 100
   )}%`;
-  nextButton.innerHTML = "Take another quiz";
   nextButton.style.display = "block";
 }
+
+const takeAnotherQuiz = document.createElement("button");
+takeAnotherQuiz.innerHTML = "Take another quiz";
+takeAnotherQuiz.style.display = "block";
 
 function handleNextButton() {
   currentQuestionIndex++;

@@ -42,7 +42,8 @@ select {
 }
 
 #start-btn,
-#next-btn {
+#next-btn,
+#takeAnotherQuiz {
   background: #001e4d;
   color: #fff;
   font-weight: 500;
